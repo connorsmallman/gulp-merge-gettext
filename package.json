@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/connorsmallman/merge-gettext/issues"
   },
-  "homepage": "https://github.com/connorsmallman/merge-gettext#readme"
+  "homepage": "https://github.com/connorsmallman/merge-gettext#readme",
+  "dependencies": {
+    "gettext-parser": "^1.2.0",
+    "through2": "^2.0.1"
+  }
 }
