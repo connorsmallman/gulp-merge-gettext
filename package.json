@@ -1,0 +1,19 @@
+{
+  "name": "gulp-merge-gettext",
+  "version": "0.1.0",
+  "description": "Merge po files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connorsmallman/merge-gettext.git"
+  },
+  "author": "Connor Smallman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/connorsmallman/merge-gettext/issues"
+  },
+  "homepage": "https://github.com/connorsmallman/merge-gettext#readme"
+}
