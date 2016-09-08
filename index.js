@@ -52,4 +52,4 @@ function mergeGettext(options) {
   return through.obj(bufferContents, endStream);
 };
 
-module.exports.mergeGettext = mergeGettext;
+module.exports = mergeGettext;
