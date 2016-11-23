@@ -1,5 +1,6 @@
 var gettextParser = require("gettext-parser");
 var through = require('through2');
+var _ = require('lodash');
 
 function getLang(p) {
   var a = p.split('/');
@@ -37,12 +38,23 @@ function mergeGettext(options) {
       if (files.length <= 1) {
         this.push(files[0]);
       } else {
-        var joinedFile = files[files.length - 1].clone({ contents: false });
-        var parsedContents = gettextParser.po.parse(Buffer.concat(files.map(f => new Buffer(f.contents))));
+        var clone = files[files.length - 1].clone({ contents: false });
+        var parsedFiles = [];
 
-        joinedFile.contents = gettextParser.po.compile(parsedContents);
+        for (var i = 0; i < files.length; i++) {
+          const o = gettextParser.po.parse(files[i].contents);
+          parsedFiles.push(o);
+        }
 
-        this.push(joinedFile);
+        var head = _.head(parsedFiles);
+        var tail = _.tail(parsedFiles);
+        var final = _.defaultsDeep(head, ...tail);
+
+        var contents = gettextParser.po.compile(final);
+
+        clone.contents = contents;
+
+        this.push(clone);
       }
     }
 

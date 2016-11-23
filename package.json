@@ -18,6 +18,7 @@
   "homepage": "https://github.com/connorsmallman/merge-gettext#readme",
   "dependencies": {
     "gettext-parser": "^1.2.0",
+    "lodash": "^4.17.2",
     "through2": "^2.0.1"
   }
 }
