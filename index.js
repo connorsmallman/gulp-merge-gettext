@@ -1,9 +1,10 @@
 var gettextParser = require("gettext-parser");
 var through = require('through2');
 var _ = require('lodash');
+var path = require('path');
 
 function getLang(p) {
-  var a = p.split('/');
+  var a = p.split(path.sep);
   return a[a.length - 2];
 }
 
